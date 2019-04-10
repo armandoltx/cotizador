@@ -18,7 +18,7 @@ class Formulario extends Component {
     planBasicoRef = React.createRef();
     planCompletoRef = React.createRef();
 
-  handleCotizarSeguro = (event) => { // al hacer arrow function no necesitamos usar .bind(this) en this.handleCotizarSeguro.bind(this)
+  cotizarSeguro = (event) => { // al hacer arrow function no necesitamos usar .bind(this) en this.CotizarSeguro.bind(this)
     event.preventDefault();
 
     // 2a. leer el plan
@@ -50,7 +50,7 @@ class Formulario extends Component {
 
   render() {
     return (
-      <form className="cotizar-auto" onSubmit={this.handleCotizarSeguro}>
+      <form className="cotizar-auto" onSubmit={this.cotizarSeguro}>
         <div className="campo">
           <label>Marca</label>
           <select name="marca" ref={this.marcaRef} >
