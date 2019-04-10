@@ -26,7 +26,7 @@ class Formulario extends Component {
     const plan = this.planBasicoRef.current.checked ? 'basico' : 'completo';
 
     // 1. obtener los datos
-    console.log(this.marcaRef.current.value);
+    // console.log(this.marcaRef.current.value);
     // console.log(this.planBasicoRef);
 
     // 2. crear el objeto
@@ -43,8 +43,8 @@ class Formulario extends Component {
     
 
     // 4. Resetear el formulario
-      console.log(event.currentTarget);
-      event.currentTarget.reset();
+      // console.log(event.currentTarget);
+      // event.currentTarget.reset();
   }
 
 
