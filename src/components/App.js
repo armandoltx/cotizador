@@ -5,6 +5,16 @@ import { obtenerDiferenciaAnio, calcularMarca, obtenerPlan } from './../helper';
 
 class App extends Component {
 
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {}
+  // } No hace falta usar constructor:
+
+  state = {
+    resultado: '',
+    datos: {}
+  }
+
   // Para que se comunique perfectamente la app, los datos del formulario los tenemos que pasar de vuelta hacia App que es el componente padre, para ello anadimos los props a <Formulario /> usando una funcion
 
   cotizarSeguro = (datos) => {
@@ -32,9 +42,22 @@ class App extends Component {
         console.log("incrementoPlan ", incrementoPlan);
 
       // 6. Dependiendo del plan incrementar
-        resultado = parseFloat (incrementoPlan * resultado.toFixed(2));
+        resultado = parseFloat(incrementoPlan * resultado).toFixed(2);
 
-    console.log("resultado final ", resultado);
+        console.log("resultado final ", resultado);
+
+      // Ya tenemos el costo
+      // modificamos es state
+      // creamos el objeto para el resumen
+      const datosAuto = {
+        marca: marca,
+        plan: plan,
+        year: year
+      }
+        this.setState({
+          resultado: resultado,
+          datos: datosAuto,
+        })
 
   }
 
