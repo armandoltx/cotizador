@@ -76,8 +76,6 @@ class App extends Component {
             resultado={this.state.resultado}
           />
         </div>
-
-        
       </div>
     );
   }
