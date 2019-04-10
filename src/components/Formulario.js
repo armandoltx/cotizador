@@ -20,11 +20,31 @@ class Formulario extends Component {
 
   handleCotizarSeguro = (event) => { // al hacer arrow function no necesitamos usar .bind(this) en this.handleCotizarSeguro.bind(this)
     event.preventDefault();
-    console.log(this.marcaRef.current.value);
-    
-    // obtener el objeto
 
-    // enviarlo al componente principal
+    // 2a. leer el plan
+
+    const plan = this.planBasicoRef.current.checked ? 'basico' : 'completo';
+
+    // 1. obtener los datos
+    console.log(this.marcaRef.current.value);
+    // console.log(this.planBasicoRef);
+
+    // 2. crear el objeto
+    const infoAuto = {
+      marca: this.marcaRef.current.value,
+      year: this.yearRef.current.value,
+      plan: plan  // para ver que plan es tenemos que leer el plan,
+    }
+
+    console.log(infoAuto);
+
+    // 3. enviarlo al componente principal
+    this.props.cotizarSeguro(infoAuto);
+    
+
+    // 4. Resetear el formulario
+      console.log(event.currentTarget);
+      event.currentTarget.reset();
   }
 
 
